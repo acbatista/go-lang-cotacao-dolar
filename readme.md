@@ -21,6 +21,38 @@ Este projeto consiste em dois sistemas em Go: `client.go` e `server.go`, que sim
 - Go 1.23+ instalado
 - Acesso à internet para consultar a API de câmbio
 
+## Estrutura de diretorio
+A estrutura de diretório para o seu projeto pode ser organizada da seguinte forma:
+
+```bash
+Copiar código
+├── client.go         # Código do cliente
+├── server.go         # Código do servidor
+├── cotacao.txt       # Arquivo gerado pelo cliente com a cotação do dólar
+├── cotacoes.db       # Banco de dados SQLite criado pelo servidor
+├── README.md         # Instruções do projeto
+├── go.mod            # Arquivo de módulo Go para gerenciar dependências
+└── go.sum            # Checksum das dependências do projeto
+```
+
+Descrição dos Arquivos
+
+- **client.go**: Código que implementa o cliente, responsável por fazer a requisição HTTP ao servidor para obter a cotação do dólar.
+
+- **server.go**: Código que implementa o servidor, responsável por consumir a API de câmbio, salvar os dados no banco de dados SQLite e responder ao cliente.
+
+- **cotacao.txt**: Arquivo gerado pelo cliente, que contém o valor atual da cotação do dólar no formato Dólar: {valor}.
+
+- **cotacoes.db**: Banco de dados SQLite criado pelo servidor, onde as cotações obtidas são armazenadas.
+
+- **README.md**: Arquivo de documentação que explica o projeto, como configurá-lo e executá-lo.
+
+- **go.mod**: Arquivo que define o módulo Go e especifica as dependências do projeto, permitindo controle de versões de pacotes.
+
+- *go.sum**: Arquivo que armazena o checksum (verificação de integridade) das dependências gerenciadas pelo Go.
+
+
+
 ## Como Executar
 
 ### Passo 1: Clonar o repositório
@@ -28,3 +60,4 @@ Este projeto consiste em dois sistemas em Go: `client.go` e `server.go`, que sim
 ```bash
 git clone https://github.com:acbatista/go-lang-cotacao-dolar.git
 cd go-lang-cotacao-dolar
+
